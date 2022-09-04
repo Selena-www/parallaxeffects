@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effetto Parallax</title>
+    <link rel="stylesheet" type="text/css" href="stile.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#"class="active">Home</a></li>
+            <li><a href="#">Chi siamo</a></li>
+            <li><a href="#">Lavori</a></li>
+            <li><a href="#">Contatti</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="stars.png" id="stars"alt="">
+        <img src="moon.png" id="moon"alt="">
+        <img src="mountains_behind.png" id="mountains_behind"alt="">
+        <h2 id="text">Chiaro di luna</h2>
+        <a href="#" id="btn">Esplora</a>
+        <img src="mountains_front.png" id="mountains_front"alt="">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Effetto Parallax</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione quis libero totam
+            vitae quisquam nemo vero sapiente eaque alias? Nulla hic accusantium, dolores eos dolore 
+            rerum vel consectetur non adipisci?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Modi ut nisi dolore cupiditate nemo accusamus obcaecati! Atque quos corrupti possimus, sequi, 
+            quidem perspiciatis esse tempora quod, deserunt voluptatibus odit? Nisi. Lorem ipsum dolor sit 
+            amet consectetur adipisicing elit. Explicabo tempore ipsum accusamus tempora similique ratione 
+            nisi vel nam, nulla maxime eos quibusdam porro impedit amet earum consequuntur numquam, deleniti 
+            corporis?<br><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione quis libero totam
+            vitae quisquam nemo vero sapiente eaque alias? Nulla hic accusantium, dolores eos dolore 
+            rerum vel consectetur non adipisci?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Modi ut nisi dolore cupiditate nemo accusamus obcaecati! Atque quos corrupti possimus. <br><br>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione quis libero totam
+            vitae quisquam nemo vero sapiente eaque alias? Nulla hic accusantium, dolores eos dolore 
+            rerum vel consectetur non adipisci?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Modi ut nisi dolore cupiditate nemo accusamus obcaecati! Atque quos corrupti possimus, sequi, 
+            quidem perspiciatis esse tempora quod, deserunt voluptatibus odit? Nisi. Lorem ipsum dolor sit 
+            amet consectetur adipisicing elit. Explicabo tempore ipsum accusamus tempora similique ratione 
+            nisi vel nam, nulla maxime eos quibusdam porro impedit amet earum consequuntur numquam, deleniti 
+            corporis?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione quis libero totam
+            vitae quisquam nemo vero sapiente eaque alias? Nulla hic accusantium, dolores eos dolore 
+            rerum vel consectetur non adipisci?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Modi ut nisi dolore cupiditate nemo accusamus obcaecati! Atque quos corrupti possimus. <br><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione quis libero totam
+            vitae quisquam nemo vero sapiente eaque alias? Nulla hic accusantium, dolores eos dolore 
+            rerum vel consectetur non adipisci?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Modi ut nisi dolore cupiditate nemo accusamus obcaecati! Atque quos corrupti possimus, sequi, 
+            quidem perspiciatis esse tempora quod, deserunt voluptatibus odit? Nisi. Lorem ipsum dolor sit 
+            amet consectetur adipisicing elit. Explicabo tempore ipsum accusamus tempora similique ratione 
+            nisi vel nam, nulla maxime eos quibusdam porro impedit amet earum consequuntur numquam, deleniti 
+            corporis?<br><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione quis libero totam
+            vitae quisquam nemo vero sapiente eaque alias? Nulla hic accusantium, dolores eos dolore 
+            rerum vel consectetur non adipisci?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Modi ut nisi dolore cupiditate nemo accusamus obcaecati! Atque quos corrupti possimus. <br><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione quis libero totam
+            vitae quisquam nemo vero sapiente eaque alias? Nulla hic accusantium, dolores eos dolore 
+            rerum vel consectetur non adipisci?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Modi ut nisi dolore cupiditate nemo accusamus obcaecati! Atque quos corrupti possimus, sequi, 
+            quidem perspiciatis esse tempora quod, deserunt voluptatibus odit? Nisi. Lorem ipsum dolor sit 
+            amet consectetur adipisicing elit. Explicabo tempore ipsum accusamus tempora similique ratione 
+            nisi vel nam, nulla maxime eos quibusdam porro impedit amet earum consequuntur numquam, deleniti 
+            corporis?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione quis libero totam
+            vitae quisquam nemo vero sapiente eaque alias? Nulla hic accusantium, dolores eos dolore 
+            rerum vel consectetur non adipisci?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Modi ut nisi dolore cupiditate nemo accusamus obcaecati! Atque quos corrupti possimus. </p>
+    </div>
+    <script>
+        let stars = document.getElementById('stars')
+        let moon = document.getElementById('moon')
+        let mountains_behind = document.getElementById('mountains_behind')
+        let text = document.getElementById('text')
+        let btn = document.getElementById('btn')
+        let mountains_front = document.getElementById('mountains_front')
+        let header = document.querySelector('header');
+        
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+</html>
